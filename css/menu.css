@@ -1,0 +1,54 @@
+
+.menu {
+  display: flex;
+  flex-wrap: nowrap;
+  font-family: 'Montserrat';
+}
+
+/* menu contains menu-items */
+.menu-item {
+  flex: 0 0;
+  padding: 5px 20px;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.menu-item:hover,
+.submenu-item:hover {
+  color: white;
+}
+
+/* menu-items can contain submenus */
+.submenu-container {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  color: gray;
+  left: 0;
+  background: #ececec;
+  min-height: 135px;
+  transition: opacity .2s, left .2s;
+}
+
+/* submenus contains submenu-items */
+.submenu-item {
+  padding: 10px 20px;
+}
+
+.menu-item:hover > .submenu-container {
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu-item > .submenu-container {
+  top: 0;
+  left: 90%;
+  padding: 0 20px;
+}
+
+.submenu-item:hover > .submenu-container {
+  left: 100%;
+  opacity: 1;
+  visibility: visible;
+}
